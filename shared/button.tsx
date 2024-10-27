@@ -1,40 +1,26 @@
-// shared/Button.tsx
-import { button } from "@nextui-org/theme";
-import React from "react";
+import { Button } from "@nextui-org/button";
 
-type ButtonProps = {
-  variant?: "solid" | "bordered";
-  color?: "primary" | "secondary" | "danger";
+type CustomButtonProps = {
   children: React.ReactNode;
   onClick?: () => void;
 };
 
-const Button: React.FC<ButtonProps> = ({
-  variant = "solid",
-  color = "primary",
+// Primary Button with solid variant and primary color
+export const PrimaryButton: React.FC<CustomButtonProps> = ({
   children,
   onClick,
-}) => {
-  const buttonStyles = button({ variant, color }); // Получаем классы как строку
+}) => (
+  <Button color="primary" variant="solid" onClick={onClick}>
+    {children}
+  </Button>
+);
 
-  return (
-    <button className={buttonStyles} onClick={onClick} type="button">
-      {children}
-    </button>
-  );
-};
-
-// Кастомная кнопка с фиксированным стилем `bordered`
-export const SecondaryButton: React.FC<Omit<ButtonProps, "variant">> = ({
-  color = "secondary",
+// Secondary Button with bordered variant and secondary color
+export const SecondaryButton: React.FC<CustomButtonProps> = ({
   children,
   onClick,
-}) => {
-  return (
-    <Button variant="bordered" color={color} onClick={onClick}>
-      {children}
-    </Button>
-  );
-};
-
-export default Button;
+}) => (
+  <Button color="secondary" variant="bordered" onClick={onClick}>
+    {children}
+  </Button>
+);
