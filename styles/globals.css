@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background-image: url("/backgroundimg.png");
+  background-image: url("../public/backgroundimg.png");
   background-size: cover;
   background-position: center;
   font-family: "Roboto", sans-serif;

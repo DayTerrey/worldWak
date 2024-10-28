@@ -1,5 +1,6 @@
-// entities/Navbar/Navbar.tsx
+import "@/styles/globals.css";
 import Link from "next/link";
+
 import { PrimaryButton, SecondaryButton } from "@/shared/button";
 
 export default function Navbar() {
@@ -8,7 +9,7 @@ export default function Navbar() {
       <div className="flex items-center space-x-6">
         <div className="flex items-center space-x-4">
           {/* Логотип и название */}
-          <img src="/favicon.ico" alt="Логотип" className="h-8 w-8" />
+          <img alt="Логотип" className="h-8 w-8" src="/favicon.ico" />
           <span className="text-black">МирВакансий</span>
         </div>
 
@@ -23,7 +24,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className="flex gap-[130rem]">
+      <div className="flex gap-[10px]">
         <SecondaryButton>Регистрация</SecondaryButton>
         <PrimaryButton>Войти</PrimaryButton>
       </div>
