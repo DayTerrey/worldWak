@@ -10,7 +10,12 @@ export const PrimaryButton: React.FC<CustomButtonProps> = ({
   children,
   onClick,
 }) => (
-  <Button color="primary" variant="solid" onClick={onClick}>
+  <Button
+    color="primary"
+    variant="solid"
+    onClick={onClick}
+    className="bg-purple-600 h-[26px]"
+  >
     {children}
   </Button>
 );
@@ -20,7 +25,12 @@ export const SecondaryButton: React.FC<CustomButtonProps> = ({
   children,
   onClick,
 }) => (
-  <Button color="secondary" variant="bordered" onClick={onClick}>
+  <Button
+    color="secondary"
+    variant="bordered"
+    onClick={onClick}
+    className="border-purple-600 h-[26px]"
+  >
     {children}
   </Button>
 );

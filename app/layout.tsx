@@ -38,8 +38,8 @@ export default function RootLayout({
       </head>
       <body
         className={clsx(
-          "min-h-screen font-sans antialiased",
-          fontSans.variable,
+          "min-h-screen font-sans antialiased bg-cover bg-center bg-[url('../public/backgroundimg.png')] scroll-p-1 pt-[38px]",
+          fontSans.variable
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
