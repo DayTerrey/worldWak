@@ -6,7 +6,7 @@ import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
-import Navbar from "@/entities/navbar";
+import { Navbar } from "@/entities/ui/navbar";
 
 export const metadata: Metadata = {
   title: {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   icons: {
-    icon: "/favicon.ico",
+    icon: "icons/favicon.ico",
   },
 };
 
@@ -26,11 +26,11 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({
-  children,
-}: {
+interface RootLayoutProps {
   children: React.ReactNode;
-}) {
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html suppressHydrationWarning lang="en">
       <head>
@@ -38,7 +38,7 @@ export default function RootLayout({
       </head>
       <body
         className={clsx(
-          "min-h-screen font-sans antialiased bg-cover bg-center bg-[url('../public/backgroundimg.png')] scroll-p-1 pt-[38px]",
+          "min-h-screen font-sans antialiased bg-cover bg-center bg-[url('../public/images/backgroundimg.png')] scroll-p-1 pt-[38px]",
           fontSans.variable
         )}
       >
