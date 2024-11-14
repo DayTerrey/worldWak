@@ -1,36 +1,42 @@
-import { Button } from "@nextui-org/button";
+import {
+  Button as NextUIButton,
+  ButtonProps as NextUIButtonProps,
+} from "@nextui-org/button";
+import React from "react";
 
-type CustomButtonProps = {
+/* 
+    Экспортируем interface из shared папки для дальнейшего использования в других модулях
+*/
+export interface CustomButtonProps extends NextUIButtonProps {
   children: React.ReactNode;
-  onClick?: () => void;
-};
+}
 
 // Primary Button with solid variant and primary color
 export const PrimaryButton: React.FC<CustomButtonProps> = ({
   children,
-  onClick,
+  ...props // Передаем остальные пропсы в NextUIButton
 }) => (
-  <Button
+  <NextUIButton
     color="primary"
     variant="solid"
-    onClick={onClick}
     className="bg-purple-600 h-[26px]"
+    {...props} // Добавляем все пропсы, полученные от родителя
   >
     {children}
-  </Button>
+  </NextUIButton>
 );
 
 // Secondary Button with bordered variant and secondary color
 export const SecondaryButton: React.FC<CustomButtonProps> = ({
   children,
-  onClick,
+  ...props
 }) => (
-  <Button
+  <NextUIButton
     color="secondary"
     variant="bordered"
-    onClick={onClick}
     className="border-purple-600 h-[26px]"
+    {...props}
   >
     {children}
-  </Button>
+  </NextUIButton>
 );
