@@ -38,7 +38,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       </head>
       <body
         className={clsx(
-          "min-h-screen font-sans antialiased bg-cover bg-center bg-[url('../public/images/backgroundimg.png')] scroll-p-1 pt-[38px]",
+          "min-h-screen text-[14px] font-bold font-sans antialiased bg-cover bg-center bg-[url('../public/images/backgroundimg.png')] scroll-p-1 pt-[38px]",
           fontSans.variable
         )}
       >
